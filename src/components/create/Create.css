@@ -1,0 +1,199 @@
+.main-create{
+    padding: 60px;
+}
+
+.div-create{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 150px;
+}
+/* .dots-div{
+    position: relative;
+} */
+.div-create-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    border-radius: 20px;
+    background-color: rgba(213, 213, 213, 0.074);
+}
+
+.create-p1{
+    text-align: center;
+    color: gray;
+    font-size: 2.5rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+.create-button{
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.425);
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+.create-button span{
+    margin-left: 50px;
+}
+
+.theme-div{
+
+}
+
+.theme-p{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+.themes-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.theme{
+    background-color: rgba(0, 0, 0, 0.46);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+}
+.theme:hover{
+    transform: scale(1.05);
+}
+
+.shape-div{
+
+}
+.shape-p{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.shape-div-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.shape{
+    background-color: rgba(0, 0, 0, 0.46);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+}
+.shape:hover{
+    transform: scale(1.05);
+}
+
+.dot-color-p{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.dot-color-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.color{
+    background-color: rgba(0, 0, 0, 0.46);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+}
+.color:hover{
+    transform: scale(1.05);
+}
+
+.res-p{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.res-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.res{
+    background-color: rgba(0, 0, 0, 0.46);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+}
+.res:hover{
+    transform: scale(1.05);
+}
+
+.create-div{
+    /* margin-top: 20px; */
+}
+
+.create-btn{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+    padding: 2px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid gray;
+}
+.create-btn:hover{
+    transform: scale(1.05);
+}
+
+.spacer{
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8a2be2, #00ffff, transparent);
+    filter: drop-shadow(0 0 8px #8a2be2);
+}
+
+.active{
+    background-color: rgba(0, 0, 0, 0.078);
+}

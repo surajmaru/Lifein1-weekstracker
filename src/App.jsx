@@ -1,18 +1,43 @@
-import { useState } from 'react'
 import './App.css'
-import LifeGrid from './components/LifeGrid.jsx';
 import "./homePage.css"
+import "./components/Works.css"
+import "./components/create/Create.css"
+
 import Home from './components/Home.jsx';
+import Works from './components/Works.jsx';
+import Create from './components/create/Create.jsx';
+import LifeGrid from './components/LifeGrid.jsx';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-    <Home/>
+    <BrowserRouter>
+    <Routes>
+
+    <Route 
+    path="/"
+    element={
+      <>
+      <Home/>
+      <Works/>
+      </>
+      }
+      />
+
+      <Route 
+      path='/create'
+      element={
+        <Create/>
+      }
+      />
+
+
     
-    {/* dots page */}
-    <main className="min-h-screen bg-bg text-white flex flex-col items-center justify-center px-6 hide">
+
+    {/* <main className="min-h-screen bg-bg text-white flex flex-col items-center justify-center px-6 hide">
       <h1 className='text-2xl font-light tracking-wide mb-6'>
         Your Life in Weeks
       </h1>
@@ -24,8 +49,10 @@ function App() {
         Each dot represents one week
       </p>
 
-    </main>
-    </>
+    </main> */}
+
+    </Routes>
+    </BrowserRouter>
   )
 }
 

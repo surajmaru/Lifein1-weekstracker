@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { TOTAL_WEEKS, weeksLived } from "../utils/life";
-import WeeksRender from "./WeeksRender";
+import { TOTAL_WEEKS, weeksLived } from "../../utils/life.js";
+import DotsWeeks from "./DotsWeeks.jsx";
 
 const WEEKS_PER_YEAR = 52;
 const MONTHS_PER_YEAR = 12;
 const YEARS = TOTAL_WEEKS / WEEKS_PER_YEAR;
 
 
-export default function LifeGrid({ dob }) {
+export default function Dots({ dob,color }) {
     const [birth, setBirth] = useState("2005-08-19");
 
     function handleInput(e){
@@ -39,11 +39,7 @@ export default function LifeGrid({ dob }) {
 
   return (
     <main className="w-100 h-140 bg-bg text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl">
-        <input placeholder="Input your birthdate: 2005-08-19" className="input" onChange={handleInput} />
-        {/* <input placeholder="Input a birthdate: 2001-12-25" className="input" type="date" onChange={handleInput} /> */}
-      <h1 className='lived-p font-light tracking-wide mb-3 mt-3'>
-        {livedYears} Years Lived - {livedPercentage ? livedPercentage : ":)"} % completed
-      </h1>
+
 
     <div className="weels-label">
         <p>Weeks --{">"}</p>
@@ -75,13 +71,14 @@ export default function LifeGrid({ dob }) {
         const isDecadeEnd = (yearIndex + 1) % 10 === 0;
 
         return (
-            <WeeksRender
+            <DotsWeeks
             key={yearIndex}
             isDecadeEnd={isDecadeEnd}
             yearStart={yearStart}
             lived={lived}
             currentRef={currentRef}
             WEEKS_PER_YEAR={WEEKS_PER_YEAR}
+            color={color}
             />
         );
       })}
