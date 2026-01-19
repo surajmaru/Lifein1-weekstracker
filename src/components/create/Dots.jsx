@@ -7,7 +7,7 @@ const MONTHS_PER_YEAR = 12;
 const YEARS = TOTAL_WEEKS / WEEKS_PER_YEAR;
 
 
-export default function Dots({ dob,color }) {
+export default function Dots({ dob,theme,themeName }) {
     const [birth, setBirth] = useState("2005-08-19");
 
     function handleInput(e){
@@ -38,11 +38,11 @@ export default function Dots({ dob,color }) {
 
 
   return (
-    <main className="w-100 h-140 bg-bg text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl">
+    <main className={`w-100 h-140 ${theme.bg} text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl rows-dots`}>
 
 
     <div className="weels-label">
-        <p>Weeks --{">"}</p>
+        <p className={`rows-dots ${themeName === "light" ? "text-black" : ""}`}>Weeks --{">"}</p>
     </div>
 
       <div className="weeks-nums grid
@@ -52,7 +52,7 @@ export default function Dots({ dob,color }) {
                     const weekNumber = i + 1;
 
                     return(
-                        <div key={i} className="text-center">
+                        <div key={i} className={`text-center ${themeName === "light" ? "text-black" : ""} rows-dots`}>
                             {weekNumber % 4 === 0 ? weekNumber : ""}
                         </div>
                     )
@@ -63,7 +63,7 @@ export default function Dots({ dob,color }) {
 
     <div
     //   ref={containerRef}
-      className="w-full max-w-[620px] h-[80vh] overflow-y-auto mx-auto no-scrollbar life-scroll"
+      className="w-full max-w-[620px] h-[80vh] overflow-y-auto mx-auto no-scrollbar life-scroll rows-dots"
     >
       {Array.from({ length: YEARS }).map((_, yearIndex) => {
         const yearStart = yearIndex * WEEKS_PER_YEAR;
@@ -78,13 +78,13 @@ export default function Dots({ dob,color }) {
             lived={lived}
             currentRef={currentRef}
             WEEKS_PER_YEAR={WEEKS_PER_YEAR}
-            color={color}
+            theme={theme}
             />
         );
       })}
     </div>
 
-    <p className='text-xs text-gray-500 mt-6'>
+    <p className={`text-xs mt-6 ${themeName === "light" ? "text-black" : "text-gray-500"} rows-dots`}>
         Each dot represents one week
       </p>
     </main>

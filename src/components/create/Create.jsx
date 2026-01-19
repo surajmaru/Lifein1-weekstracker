@@ -1,22 +1,39 @@
-import { useState } from "react"
+import { use, useState } from "react"
 import Dots from "./Dots.jsx"
 
 export default function Create(){
-    const [color,setColor] = useState("");
 
-    // theme change
-    function handleTheme(e){
-        setColor("white");
+    const THEME_COLORS = {
+        colored:{
+            decades: [
+                "bg-10","bg-20","bg-30","bg-40",
+                "bg-50","bg-60","bg-70","bg-80"
+            ],
+            future: "bg-gray-700",
+            current: "bg-red-500",
+            bg:"bg-neutral-950"
+        },
+        light:{
+            decades: Array(8).fill("bg-neutral-900"),
+            future: "bg-neutral-300",
+            current: "bg-red-500",
+            bg:"bg-neutral-50"
+        },
+        dark:{
+            decades: Array(8).fill("bg-neutral-100"),
+            future: "bg-neutral-700",
+            current: "bg-red-400",
+            bg:"bg-neutral-950"
+        }
     }
 
+    const [theme,setTheme] = useState("colored");
 
 
     return(
         <div className="main-create">
             <div className="div-create">
-                <div className="dots-div">
-                <Dots dob="2001-09-18" color={color}/>
-                </div>
+                <Dots dob="2001-09-18" theme={THEME_COLORS[theme] ?? THEME_COLORS.colored} themeName={theme}/>
 
 
 
@@ -31,10 +48,9 @@ export default function Create(){
                         <p className="theme-p">Select theme</p>
 
                         <div className="themes-div">
-                            <button className="theme active" onClick={handleTheme}>Colored</button>
-                            <button className="theme" onClick={handleTheme}>Normal</button>
-                            <button className="theme" onClick={handleTheme}>Dark</button>
-                            <button className="theme" onClick={handleTheme}>Neon</button>
+                            <button className={`theme ${theme === "colored" ? "active" : ""}`} onClick={() => setTheme("colored")}>Colored</button>
+                            <button className={`theme ${theme === "dark" ? "active" : ""}`} onClick={() => setTheme("dark")}>Dark</button>
+                            <button className={`theme ${theme === "light" ? "active" : ""}`} onClick={() => setTheme("light")}>Light</button>
                         </div>
                     </div>
 
