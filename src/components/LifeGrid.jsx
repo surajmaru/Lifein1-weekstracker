@@ -38,7 +38,7 @@ export default function LifeGrid({ dob }) {
 
 
   return (
-    <main className="w-100 h-140 bg-bg text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl">
+    <main data-aos="fade-down" data-aos-duration="3000" className="w-100 h-140 bg-bg text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl">
         <input placeholder="Input your birthdate: 2005-08-19" className="input" onChange={handleInput} />
         {/* <input placeholder="Input a birthdate: 2001-12-25" className="input" type="date" onChange={handleInput} /> */}
       <h1 className='lived-p font-light tracking-wide mb-3 mt-3'>

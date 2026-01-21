@@ -7,17 +7,7 @@ const MONTHS_PER_YEAR = 12;
 const YEARS = TOTAL_WEEKS / WEEKS_PER_YEAR;
 
 
-export default function Dots({ dob,theme,themeName }) {
-    const [birth, setBirth] = useState("2005-08-19");
-
-    function handleInput(e){
-    const value = e.target.value;
-    const isValidDate = /^\d{4}-\d{2}-\d{2}$/.test(value);
-    if(isValidDate){
-    console.log(value);
-    setBirth(value)
-    }
-    }
+export default function Dots({theme,themeName,shape,dotColor,birth }) {
 
     const lived = weeksLived(birth);
     // lived in years
@@ -26,27 +16,31 @@ export default function Dots({ dob,theme,themeName }) {
     const containerRef = useRef(null);
     const currentRef = useRef(null);
 
-  useEffect(() => {
-    if (!containerRef.current || !currentRef.current) return;
-
-    const container = containerRef.current;
-    const current = currentRef.current;
-
-    container.scrollTop =
-      current.offsetTop - container.clientHeight / 2;
-  }, []);
-
 
   return (
-    <main className={`w-100 h-140 ${theme.bg} text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl rows-dots`}>
+    // <main className={`w-100 h-140 ${theme.bg} text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl rows-dots`}>
+    // <main className={`${theme.bg} text-white flex flex-col items-center justify-center px-6 py-6 rounded-2xl rows-dots`}>
 
+    <main
+    className={`
+      ${theme.bg} text-white rows-dots
+      w-full h-full
+      flex flex-col
+      items-center
+      justify-center
+      px-6 py-6
+       
+      main-top
+    `}
+  >
 
     <div className="weels-label">
         <p className={`rows-dots ${themeName === "light" ? "text-black" : ""}`}>Weeks --{">"}</p>
     </div>
 
-      <div className="weeks-nums grid
-        grid-cols-[repeat(52,1fr)] w-full max-w-[620px]">
+      {/* <div className="weeks-nums grid grid-cols-[repeat(52,1fr)] w-full max-w-[620px]"> */}
+      <div className={`weeks-nums grid grid-cols-[repeat(52,1fr)] w-full`}>
+
             {
                 Array.from({ length: WEEKS_PER_YEAR }).map((_, i) => {
                     const weekNumber = i + 1;
@@ -61,10 +55,9 @@ export default function Dots({ dob,theme,themeName }) {
         </div>
 
 
-    <div
-    //   ref={containerRef}
-      className="w-full max-w-[620px] h-[80vh] overflow-y-auto mx-auto no-scrollbar life-scroll rows-dots"
-    >
+    <div className="w-full max-w-[620px]  overflow-y-auto mx-auto no-scrollbar life-scroll rows-dots">
+    {/* <div className={`w-full rows-dots ${ exportMode ? "" : "max-w-[620px]  overflow-y-auto mx-auto"} no-scrollbar life-scroll `}> */}
+
       {Array.from({ length: YEARS }).map((_, yearIndex) => {
         const yearStart = yearIndex * WEEKS_PER_YEAR;
 
@@ -79,13 +72,18 @@ export default function Dots({ dob,theme,themeName }) {
             currentRef={currentRef}
             WEEKS_PER_YEAR={WEEKS_PER_YEAR}
             theme={theme}
+            shape={shape}
+            dotColor={dotColor}
             />
         );
       })}
     </div>
 
-    <p className={`text-xs mt-6 ${themeName === "light" ? "text-black" : "text-gray-500"} rows-dots`}>
+    <p className={`text-s mt-6 ${themeName === "light" ? "text-black" : "text-gray-500"} rows-dots`}>
         Each dot represents one week
+      </p>
+    <p className={`text-s mt-2 ${themeName === "light" ? "text-black" : "text-gray-500"} rows-dots`}>
+        76 YEARS
       </p>
     </main>
   );

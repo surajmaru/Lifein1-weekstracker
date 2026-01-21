@@ -5,6 +5,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 .home-div-2{
     display: flex;
@@ -41,13 +42,14 @@
 
 .top-btn{
     color: gray;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     background-color: black;
     padding: 5px 10px;
     border-radius: 20px;
     transition: all 0.4s ease;
     cursor: pointer;
+    border: 1px solid gray;
 }
 .top-btn:hover{
     transform: scale(1.02);
@@ -136,6 +138,7 @@
     cursor: pointer;
     width: fit-content;
     margin-top: 100px;
+    border: 1px solid gray;
 }
 .top-btn-2:hover{
     transform: scale(1.04);

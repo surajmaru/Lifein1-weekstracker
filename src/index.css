@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 html, body{
-  background-image: linear-gradient(45deg,rgb(60, 7, 36) , rgb(0, 0, 0), rgb(11, 11, 80));
+  /* background-image: linear-gradient(45deg,rgb(60, 7, 36) , rgb(0, 0, 0), rgb(11, 11, 80)); */
+  background-color: rgba(0, 0, 0, 0.808);
   user-select: none;
   padding-top: 40px;
   /* height: 100%; */
@@ -54,9 +55,11 @@ html, body{
 
 .weels-label{
   color: gray;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 10px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+  width: 100%;
+  text-align: center;
 }
 
 .dots-div{
@@ -73,18 +76,24 @@ html, body{
 }
 
 .input{
-  background-color: rgba(255, 255, 255, 0.39);
-  border-radius: 10px;
-  padding: 2px 10px;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.185);
+  border-radius: 5px;
+  border: 1px solid rgba(179, 179, 179, 0.329);
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
   width: 250px;
 }
 .input::placeholder{
-  font-size: 14px;
-  color: black;
+  font-size: 13px;
+  color: rgb(255, 255, 255);
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 
 .rows-dots{
   transition: all 0.2s ease-in-out;
+  image-rendering: pixelated;
+}
+
+.main-top{
+  border: 1px solid gray;
 }

@@ -1,14 +1,19 @@
 import './App.css'
 import "./homePage.css"
 import "./components/Works.css"
+import "./components/Why.css"
 import "./components/create/Create.css"
 
 import Home from './components/Home.jsx';
 import Works from './components/Works.jsx';
 import Create from './components/create/Create.jsx';
-import LifeGrid from './components/LifeGrid.jsx';
-
+import Why from './components/Why.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 function App() {
@@ -23,6 +28,7 @@ function App() {
       <>
       <Home/>
       <Works/>
+      <Why/>
       </>
       }
       />
@@ -33,23 +39,6 @@ function App() {
         <Create/>
       }
       />
-
-
-    
-
-    {/* <main className="min-h-screen bg-bg text-white flex flex-col items-center justify-center px-6 hide">
-      <h1 className='text-2xl font-light tracking-wide mb-6'>
-        Your Life in Weeks
-      </h1>
-
-      <LifeGrid dob="2005-08-19" />
-
-
-      <p className='text-xs text-gray-500 mt-6'>
-        Each dot represents one week
-      </p>
-
-    </main> */}
 
     </Routes>
     </BrowserRouter>

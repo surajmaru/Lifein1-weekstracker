@@ -3,7 +3,9 @@ export default function DotsWeeks({
   yearStart,
   lived,
   currentRef,
-  theme
+  theme,
+  shape,
+  dotColor,
 }) {
   const WEEKS_PER_YEAR = 52;
 
@@ -13,7 +15,6 @@ export default function DotsWeeks({
       className={`rows-dots
         grid
         grid-cols-[repeat(52,1fr)]
-        justify-items-center
         ${isDecadeEnd ? "mb-2" : "mb-1"}
       `}
     >
@@ -21,19 +22,22 @@ export default function DotsWeeks({
         const i = yearStart + weekIndex;
 
         let size = "w-[4px] h-[4px]"
+        // let size = "w-[4.5px] h-[4.5px]"
         let ref = null;
         
         const decadeIndex = Math.floor(i / 520); // 520 = 10 years.
         const isLived = i < lived;
 
         let color = theme.future;
+        // let color = "bg-red-500";
+
         
         if( isLived && decadeIndex < theme.decades.length){
             color = theme.decades[decadeIndex];
         }
 
         if (i === lived) {
-          color = `${theme.current} shadow-[0_0_8px_#ff4d4d]`;
+          color = `${dotColor === "default" ? theme.current : theme.current2} shadow-[0_0_8px_#ff4d4d]`;
           ref = currentRef;
         }
 
@@ -42,7 +46,7 @@ export default function DotsWeeks({
           <div
             key={weekIndex}
             ref={ref}
-            className={`${size} rounded-full transition-all ${color} rows-dots`}
+            className={`${size} ${shape === "circle" ? "rounded-full" : ""} transition-all ${color} rows-dots`}
           > 
           </div>          
         );
