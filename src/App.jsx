@@ -3,6 +3,8 @@ import "./homePage.css"
 import "./components/Works.css"
 import "./components/Why.css"
 import "./components/create/Create.css"
+import "./mobile-view.css"
+import "./mobile-view-2.css"
 
 import Home from './components/Home.jsx';
 import Works from './components/Works.jsx';
@@ -29,6 +31,7 @@ function App() {
       <Home/>
       <Works/>
       <Why/>
+      <div className='footer-div'><p className='footer'>Every dot matters — built by Suraj.</p></div>
       </>
       }
       />
@@ -36,7 +39,10 @@ function App() {
       <Route 
       path='/create'
       element={
+        <>
         <Create/>
+        <div className='footer-div'><p className='footer'>Every dot matters — built by Suraj.</p></div>
+        </>
       }
       />
 

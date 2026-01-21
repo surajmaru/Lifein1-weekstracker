@@ -78,6 +78,7 @@ export default function Why() {
         <div data-aos="fade-down" data-aos-duration="2500">
             <button className='top-btn-3' onClick={() => navigate("/create")}>Create now</button>
         </div>
+
     </motion.section>
   );
 }
